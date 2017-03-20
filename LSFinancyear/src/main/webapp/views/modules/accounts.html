@@ -1,0 +1,84 @@
+<div ng-controller = "accountsController" ng-init="onload()">
+
+<div class="row">
+<!--   <div class="alert alert-info">
+            <div class="form-inline"> -->
+            <div class = "row plate">
+		<div class="col-md-3">
+			<Select  class="input" ng-model="account.month">
+			 <option value=''>--Select Month--</option>
+    <option selected value='0'>Janaury</option>
+    <option value='1'>February</option>
+    <option value='2'>March</option>
+    <option value='3'>April</option>
+    <option value='4'>May</option>
+    <option value='5'>June</option>
+    <option value='6'>July</option>
+    <option value='7'>August</option>
+    <option value='8'>September</option>
+    <option value='9'>October</option>
+    <option value='10'>November</option>
+    <option value='11'>December</option>
+			</Select>
+		</div>
+		
+		<div class="col-md-3">
+			<Select  class="input" ng-model="account.year">
+			 <option value=''>--Select Year--</option>
+    <option selected value='2015'>2015</option>
+    <option value='2016'>2016</option>
+    <option value='2017'>2017</option>
+    <option value='2018'>2018</option>
+			</Select>
+		</div>
+		<div class="col-md-3">
+			<!-- <Select  class="input" ng-model="account.financeStatus">
+			<option value=""> Finance Status </option>
+			<option>Started</option>
+			<option>Closed</option>
+			</Select> -->
+		</div>
+		<!-- <div class="col-md-2">
+			<input  class="input" ng-model="finance.customerName">
+		</div>
+		 -->
+		<div class="col-md-3">
+		<button ng-click="getAccounts(account)" class="button">Search</button>
+		<!--  <button type="button" ng-click="searchCustomer(finance)" class="btn blue" >Search </button> -->
+		</div>
+		</div>
+	 
+	</div>
+	
+		<div class="row">
+	 <div class="alert alert-info">
+            <div class="form-inline">
+            <div class = "row">
+		<div class="col-md-6">
+		<label class="label_bold_15" ><b>Total Spent</b></label>
+		</div>
+		<div class="col-md-6">
+		<label class="label_bold_15">{{financyearTotalSpent}}</label>
+		</div>
+		</div>
+		<div class = "row">
+		<div class="col-md-6">
+		<label class="label_bold_15"><b>Total Collected</b></label>
+		</div>
+		<div class="col-md-6">
+		<label class="label_bold_15">{{financyearTotalCollected}}</label>
+		</div>
+		</div>
+		<div class = "row">
+		<div class="col-md-6">
+		<label class="label_bold_15"><b>Remaining To Collect</b></label>
+		</div>
+		
+		<div class="col-md-6">
+		<label class="label_bold_15">{{remainingFinanceToCollect}}</label>
+		</div>
+		</div></div></div>
+	
+	</div>
+
+</div>

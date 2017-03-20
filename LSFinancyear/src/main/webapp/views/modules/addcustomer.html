@@ -1,0 +1,124 @@
+<div ng-controller="addCustomerController" ng-init="onload()">
+<div class="container">
+<form  novalidate=""
+		ng-submit=""   name="custom-form" class="custom-form"> 
+	
+		<div class="header">
+							<h1>{{customerPageType}}</h1>
+						</div>
+	
+		<div class="content">
+				<div class="row">
+					<div class="col-md-6">
+					
+						<input type="hidden" class="input password"
+							ng-model="customer.customerId"> 
+				<input type="text" class="input password" ng-model="customer.name" placeholder="Customer Name" required="">
+					</div>
+					<div class="col-md-6">
+					<input type="text" class="input password" ng-model="customer.phone"
+							placeholder="Phone Number">
+					</div>
+				</div>
+				 
+				<div class="row">
+					<div class="col-md-6">
+					<input type="text" class="input password"
+							ng-model="customer.address" placeholder="Address">
+					</div>
+					<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-9">
+								<input type="text" class="input password"
+									uib-datepicker-popup="{{dateFormat}}"
+									is-open="DatePopup.opened" datepicker-options="DateOptions"
+									close-text="Close" alt-input-formats="altInputFormats"
+									ng-model="customer.startDate" placeholder="Start Date" />
+							</div>
+							<div class="col-md-3">
+								<button type="button" class="btn btn-default"
+									ng-click="Dateopen()">
+									<i class="glyphicon glyphicon-calendar"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				 </div>
+				 
+				<div class="row">
+					<div class="col-md-6">
+						<Select class="input password" ng-model="customer.financeStatus">
+							<option value="">Finance Status</option>
+							<option>Started</option>
+							<option>Closed</option>
+						</Select>
+					</div>
+					<div class="col-md-6">
+						<input type="text" class="input password"
+							ng-model="customer.totalAmount" placeholder="Total Amount">
+					</div>
+					</div>
+	 
+				<div class="row">
+					<div class="col-md-6">
+						<input type="text" class="input password"
+							ng-model="customer.interest" placeholder="Interest"
+							ng-change="getAmountToPay()">
+					</div>
+					<div class="col-md-6">
+						<input type="text" class="input password"
+							ng-model="customer.amountToCustomer"
+							placeholder="Amount To Customer" readonly="readonly">
+					</div>
+				</div>
+				<div class="row">
+
+					<div class="col-md-6">
+						<Select class="input password" ng-model="customer.financeType"
+							ng-change="getFinanceDays()">
+							<option value="">Finance Type</option>
+							<option>Daily</option>
+							<option>Weekly</option>
+							<option>Monthly</option>
+						</Select>
+					</div>
+					<div class="col-md-6">
+						<input type="text" class="input password"
+							ng-model="customer.noOfDays" placeholder="{{daysToPay}}"
+							ng-change="getDailyAmount()">
+					</div>
+				</div>
+				<div class="row">
+					 <div class="col-md-6"><input type="text" class="input password"
+							ng-model="customer.amountPerType" readonly="readonly"
+							placeholder="{{customer.type}} Amount To Pay"></div>
+					 <div class="col-md-6"></div>
+					 
+
+					 
+						
+					 
+				</div>
+<!-- 
+				<div class="row">
+				 
+					<div class="col-md-6">
+						<div class="pull-right">
+							<button type="submit" ng-click="" class="btn blue">Add
+							</button>
+							<button type="button" class="btn grey-cascade" ng-click="">
+								Reset <i class="fa fa-refresh"></i>
+							</button>
+						</div>
+					</div>
+				</div> -->
+		</div>
+		<div class="footer">
+							<button ng-click="createCustomer(customer)" class="button">Add</button>
+							
+							<button ng-click="Reset(customer)" class="button">Reset</button>
+							 
+						</div>
+	</form>
+	</div>
+</div>

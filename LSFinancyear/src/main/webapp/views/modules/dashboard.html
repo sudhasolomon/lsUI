@@ -1,0 +1,47 @@
+<div ng-controller = "dashboardController" ng-init= "onload()">
+
+<form novalidate="" ng-submit=""  name="custom-form" class="custom-form"> 
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="header">
+								<h1>User Info</h1>
+							</div>
+						
+						</div>
+						<div class="content">
+							 <div class="row">
+								 <div class="col-md-12"> 
+						 				<textarea  ng-model="info.discription" type="text" class="input password" rows="6" style="resize :none"
+										placeholder="Discription" required="" ></textarea>
+								</div>
+							</div>
+					</div> 
+					
+						<div class="footer">
+													
+							<div class="row" >
+							<button ng-click="saveInfo(info)" class="button">Save</button>
+							<button ng-click="DeleteInfo(info)" class="button">Delete</button>
+							</div>
+							 
+						</div>
+					</div>
+
+</form>
+
+
+<!-- <div class="row " style="background: #3aafd1;">
+		<div class="row">
+     <label class="label_bold_18">Customer ID</label>
+		</div>
+	</div>
+<div class="row " ng-repeat="customer in customerObj | filter:{customerId:search.customerId,name:search.name}"
+		ng-click="displayItemInfo(customer)" style="cursor: pointer;"
+		ng-class-odd="'odd'" ng-class-even="'even'">
+		<div class="col-md-2" >
+			<label class="lable16"><a >{{customer.customerId}}</a></label>
+		</div>
+	
+	</div> -->
+</div>

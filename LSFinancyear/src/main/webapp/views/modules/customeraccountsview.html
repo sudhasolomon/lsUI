@@ -1,0 +1,163 @@
+<div ng-controller="customerAccountsViewController" ng-init="onload()">
+
+
+
+<div class="row ">
+ <div class="alert alert-info">
+            <div class="form-inline">
+            <div class="row">
+<div class="col-sm-2">
+			<label class="label_bold_15"><b>Customer ID </b></label>
+			<label class="label_bold_15">{{customerId}}</label>
+		</div>
+<div class="col-sm-2">
+			<label class="label_bold_15"><b>Name</b></label>
+			<label class="label_bold_15">{{name}}</label>
+		</div>
+<div class="col-sm-2">
+			<label class="label_bold_15"><b>Start Date</b></label>
+			<label class="label_bold_15">{{startDate}}</label>
+		</div>
+<div class="col-sm-2">
+			<label class="label_bold_15"><b>Total Amount</b></label>
+			<label class="label_bold_15">{{totalAmount}}</label>
+		</div>
+		</div>
+<div class="row show2">
+<div class="col-sm-4"><i class="fa fa-circle" aria-hidden="true" style="color:green;"></i> <label>Paid</label></div>
+<div class="col-sm-4"><i class="fa fa-circle" aria-hidden="true" style="color:red;"></i>  <label>Postponed</label></div>
+<!-- <div class="col-sm-4"><i class="fa fa-circle" aria-hidden="true" style="color:blue;"></i>  <label>Extra</label></div> -->
+</div>		
+		
+ </div></div>
+</div>
+
+
+
+
+<br>
+<!-- style="background: #a3a92e;" -->
+	<div class="row show1"  style="background: #3aafd1;">
+		<div class="col-sm-2">
+			<label class="label_bold_18">Status</label>
+		</div>
+		<div class="col-sm-2">
+			<label class="label_bold_18">Date</label>
+		</div>
+		<!-- <div class="col-sm-2">
+			<label class="label_bold_18">Postponed To</label>
+		</div> -->
+		<div class="col-sm-2">
+			<label class="label_bold_18">Amount</label>
+		</div>
+		<div class="col-sm-2">
+			<label class="label_bold_18">Paid</label>
+		</div>
+		<div class="col-sm-2">
+			<label class="label_bold_18">Due</label>
+		</div>
+	</div>
+	<div class="row show1" ng-repeat="customer in customerObj"
+		ng-click="displayItemInfo(customer)" style="cursor: pointer;"
+		ng-class-odd="'odd'" ng-class-even="'even'">
+		<div class="col-sm-2">
+		<div ng-if="(customer.paymentStatus == 'Paid')">
+			<label class="lable16"><i class="fa fa-circle" aria-hidden="true" style="color:green;"></i>{{customer.paymentStatus}}</label>
+			</div>
+			<div ng-if="(customer.paymentStatus == 'Postponed')">
+			<label class="lable16"><i class="fa fa-circle" aria-hidden="true" style="color:red;"></i>{{customer.paymentStatus}}</label>
+			</div>
+			<!-- <div ng-if="(customer.paymentStatus == 'Extra')">
+			<label class="lable16"><i class="fa fa-circle" aria-hidden="true" style="color:blue;"></i>{{customer.paymentStatus}}</label>
+			</div> -->
+		</div>
+		<div class="col-sm-2">
+			<!-- <label class="lable16">{{customer.paidDate != null ? customer.paidDate : "-"}}</label> -->
+			<div ng-if="(customer.paymentStatus == 'Paid')">{{customer.paidDate != null ?customer.paidDate : "-"}}</div>
+			<div ng-if="(customer.paymentStatus == 'Postponed')">{{customer.postponedTo != null ? customer.postponedTo : "-"}}</div>
+			<!-- <div ng-if="(customer.paymentStatus == 'Extra')">{{customer.paidDate != null ? customer.paidDate : "-"}}</div> -->
+		</div>
+		<!-- <div class="col-sm-2">
+			<label class="lable16">{{customer.postponedTo != null ? customer.postponedTo : "-"}}</label>
+		</div> -->
+		<div class="col-sm-2">
+			<label class="lable16">{{customer.onDateCollection}}</label>
+		</div>
+		<div class="col-sm-2">
+			<label class="lable16">{{customer.paid}}</label>
+		</div>
+		<div class="col-sm-2">
+			<label class="lable16">{{customer.due}}</label>
+		</div>
+		
+	</div>
+
+
+<div  class="row show2">
+<table border="1" ng-class-odd="'even'" ng-class-even="'odd'">
+<tr style="background: #3aafd1;">
+<th>Date</th>
+<th>Amount</th>
+<th>Paid</th>
+<th>Due</th>
+</tr>
+<tr ng-repeat="customer in customerObj">
+<td>
+<div ng-if="(customer.paymentStatus == 'Paid')"><i class="fa fa-circle" aria-hidden="true" style="color:green;"></i>{{customer.paidDate != null ?customer.paidDate : "-"}}</div>
+<div ng-if="(customer.paymentStatus == 'Postponed')"><i class="fa fa-circle" aria-hidden="true" style="color:red;"></i>{{customer.postponedTo != null ? customer.postponedTo : "-"}}</div>
+<!-- <div ng-if="(customer.paymentStatus == 'Extra')"><i class="fa fa-circle" aria-hidden="true" style="color:blue;"></i>{{customer.paidDate != null ? customer.paidDate : "-"}}</div> -->
+</td>
+<td  >{{customer.onDateCollection}}</td>
+<td  >{{customer.paid}}</td>
+<td >{{customer.due}}</td>
+</tr>
+</table>
+
+</div>
+
+
+
+<!-- 	<div  class="row show2" ng-repeat="customer in customerObj"
+    ng-click="displayItemInfo(customer)" style="cursor: pointer;"
+    ng-class-odd="'even'" ng-class-even="'odd'">
+    <div class="col-xs-12">
+    <div class="row col-xs-12 topbtmspace" >
+    
+     <div class="col-xs-6 "><label class="label_bold_18">Status</label></div>
+     
+     <div ng-if="(customer.paymentStatus == 'Paid')">
+	<div class="col-xs-6 "><label class="lable16"><i class="fa fa-circle" aria-hidden="true" style="color:green;"></i>{{customer.paymentStatus}}</label></div>
+	</div>
+	
+	<div ng-if="(customer.paymentStatus == 'Postponed')">
+	<div class="col-xs-6 "><label class="lable16"><i class="fa fa-circle" aria-hidden="true" style="color:red;"></i>{{customer.paymentStatus}}</label></div>
+	</div>
+    </div>
+    <div class="row col-xs-12 topbtmspace">
+     <div class="col-xs-6 "><label class="label_bold_18">Date</label></div>
+     <div class="col-xs-6  "><label class="lable16"><a ng-click = "editCustomer(customer.customerId)">{{customer.paidDate != null ? customer.paidDate : "-"}}</a></label></div>
+    </div>
+        <div class="row col-xs-12 topbtmspace">
+     <div class="col-xs-6  "><label class="label_bold_18">Postponed To</label></div>
+     <div class="col-xs-6"><label class="lable16">{{customer.postponedTo != null ? customer.postponedTo : "-"}}</label></div>
+    </div>
+     <div class="row col-xs-12 topbtmspace">
+     <div class="col-xs-6  "><label class="label_bold_18">Amount</label></div>
+     <div class="col-xs-6"><label class="lable16">{{customer.onDateCollection}}</label></div>
+    </div>
+     <div class="row col-xs-12 topbtmspace">
+     <div class="col-xs-6  "><label class="label_bold_18">Paid</label></div>
+     <div class="col-xs-6"><label class="lable16">{{customer.paid}}</label></div>
+    </div>
+     <div class="row col-xs-12 topbtmspace">
+     <div class="col-xs-6  "><label class="label_bold_18">Due</label></div>
+     <div class="col-xs-6"><label class="lable16">{{customer.due}}</label></div>
+    </div>
+    </div>
+   </div> -->
+ 
+
+
+
+
+</div>

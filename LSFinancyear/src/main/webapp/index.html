@@ -1,0 +1,134 @@
+<html ng-app="financyearApp" ng-controller = "financyearController">
+<head>
+<title>LS-Financyear</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/font-awesome/css/font-awesome.css" rel="stylesheet">
+<link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="css/font-awesome/css/bootstrap.css" rel="stylesheet">
+<link type="text/css" href="css/styles.css" rel="stylesheet">
+<link type="text/css" href="css/bootstrap.css" rel="stylesheet">
+<link type="text/css" href="css/animate.css" rel="stylesheet">
+<link type="text/css" href="css/bootstrap-theme.css" rel="stylesheet">
+<link type="text/css" href="css/components.css" rel="stylesheet">
+<link type="text/css" href="css/layout.css" rel="stylesheet">
+<link type="text/css" href="css/custom.min.css" rel="stylesheet">
+<!-- css for toggle -->
+ <link type="text/css" href="css/main.css" rel="stylesheet">
+ <link href="css/loginform-style.css" rel="stylesheet">
+ 
+
+
+</head>
+<header class="navbar  navbar-fixed-top">
+    <div  data-ng-include="'views/temp/header.html'" data-ng-controller="headerController" > </div>
+  </header>
+  <div class="magicdiv"></div>
+<body data-spy="scroll" data-offset="0" data-target="#theMenu">
+<div class="page-container">
+<!-- <div class="page-container"> -->
+<!-- <div class="img"> -->
+<!-- 
+<div class="container">
+     <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+    <span class="caret"></span></button>
+        </div><ul class="dropdown-menu">
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">JavaScript</a></li>
+    </ul>
+  </div>
+ -->
+<!-- <i class="fa fa-users" aria-hidden="true"></i> -->
+	<nav class="menu" id="theMenu">	
+		<div class="menu-wrap">
+			<img id="Image"/>
+			<h1 class="logo"><a href="#">{{loginUser.firstName}} {{loginUser.lastName}}</a></h1>
+			<i class="icon-remove menu-close"></i>
+			<a href="#/dashboard" class="smoothScroll ">Dash Board </a>
+			<a href="#/dailyView" class="smoothScroll ">Daily View </a>
+			<a href="#/add/0" class="smoothScroll">Add Customer</a>
+			<a href="#/view" class="smoothScroll">view Customer</a>
+			<a href="#/accounts" class="smoothScroll">Accounts</a>
+			<h1 class="logo"><a href="#">Settings</a></h1>
+			<a href="#/profile" class="smoothScroll">Profile</a>
+			<a href="#/changepassword" class="smoothScroll">Change password</a>
+			<a href="#" class="smoothScroll" ng-click="logout()">Logout</a>
+			<!-- <a href="#"><i class="icon-facebook"></i></a>
+			<a href="#"><i class="icon-twitter"></i></a>
+			<a href="#"><i class="icon-dribbble"></i></a>
+			<a href="#"><i class="icon-envelope"></i></a> -->
+		</div>
+		
+		<!-- Menu button -->
+		<div id="menuToggle"><i class="icon-reorder"></i></div>
+	</nav>
+
+
+<!-- <header>
+    <div class="myheader" data-ng-include="'views/temp/header.html'" data-ng-controller="headerController" > </div>
+  </header> -->
+
+
+          
+<!-- <div class="page-sidebar-wrapper" style="position: fixed;" data-ng-include = "'views/temp/sidebar.html'" data-ng-controller="sidebarController"></div> -->
+
+
+<!-- <div class="page-content-wrapper"> -->
+       <!--  <div class="page-content"> -->
+       <!--    BEGIN ACTUAL CONTENT -->
+          <div ui-view> </div>
+       <!--    END ACTUAL CONTENT -->
+        <!-- </div> -->
+    <!--   </div> -->
+
+
+
+
+<!-- <footer>
+<div class="myfooter" data-ng-include="'views/temp/footer.html'" data-ng-controller="footerController"></div>
+</footer> -->
+
+
+
+
+<script type="text/javascript" src="js/angular/angular.min.js"></script>
+<script type="text/javascript" src="js/angular/angular-block-ui.js"></script>
+<script type="text/javascript" src="js/angular/angular-sanitize.min.js"></script>
+<script type="text/javascript" src="js/angular/angular-touch.min.js"></script>
+<script type="text/javascript" src="js/angular/angular-ui-router.min.js"></script>
+<!-- <script type="text/javascript" src="js/angular/jquery-ui.min.js"></script> -->
+<script type="text/javascript" src="js/angular/angular-material.1.0.0.js"></script>
+<script type="text/javascript" src="js/angular/jcs-auto-validate.min.js"></script>
+<!-- <script type="text/javascript" src="js/angular/jquery.min.1.12.js"></script> -->
+<script type="text/javascript" src="js/angular/jquery1.24.min.js"></script>
+<!-- <script type="text/javascript" src="js/angular/bootstrap.min.js"></script> -->
+<script type="text/javascript" src="js/angular/ui-bootstrap-tpls.min.js"></script>
+<script type="text/javascript" src="js/module/customermodule.js"></script>
+<script type="text/javascript" src="js/module/addcustomer.js"></script>
+<script type="text/javascript" src="js/module/viewcustomer.js"></script>
+<script type="text/javascript" src="js/module/dailyview.js"></script>
+<script type="text/javascript" src="js/module/customeraccountsview.js"></script>
+<script type="text/javascript" src="js/module/dashboard.js"></script>
+<script type="text/javascript" src="js/angular/constants.js"></script>
+<!-- <script type="text/javascript" src="js/angular/ng-img-crop.js"></script> -->
+<script type="text/javascript" src="js/module/userProfile.js"></script>
+<script type="text/javascript" src="js/module/accounts.js"></script>
+<script type="text/javascript" src="js/module/usermodule.js"></script>
+<script type="text/javascript" src="js/module/changepassword.js"></script>
+<script type="text/javascript" src="js/module/DateRangeService.js"></script>
+<!-- <script type="text/javascript" src="js/angular/layout.js"></script> -->
+<script type="text/javascript" src="js/index.js"></script>
+
+
+
+	<script type="text/javascript" src="js/asserts/classie.js"></script>
+    <!-- <script type="text/javascript" src="js/asserts/bootstrap.min.js"></script> -->
+    <script type="text/javascript" src="js/asserts/smoothscroll.js"></script>
+	<script type="text/javascript" src="js/asserts/main.js"></script>
+	<!-- </div> -->
+	</div>
+</body>
+<footer></footer>
+
+</html>

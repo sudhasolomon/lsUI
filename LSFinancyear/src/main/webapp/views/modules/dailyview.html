@@ -1,0 +1,200 @@
+<div ng-controller = "dailyViewController" ng-init = "onload()">
+
+<form name="dailyView" ng-submit="">
+  <div class = "row">
+     <div class="alert alert-info">
+            <div class="form-inline">
+            <div class = "row radiobutton">
+            <div class="col-md-2">
+            
+                <label class="control-label">
+                    Select View Type </label>
+             </div>
+              <div class="col-md-2">
+               
+                <label class="radio">
+                    <input value="Daily" type="radio" name="type" ng-model = "type">Daily
+                </label>
+                 </div>
+              <div class="col-md-2">
+                
+                <label class="radio">
+                    <input value="Weekly" type="radio" name="type" ng-model = "type">Weekly
+                </label>
+                 </div>
+              <div class="col-md-2">
+                
+                <label class="radio">
+                    <input value="Monthly" type="radio" name="type" ng-model = "type">Monthly
+                </label>
+               </div>
+               <div class="col-md-2">
+                <label >
+                <button ng-click="getMyDailyView()" class="mybutton">View</button>
+                
+                </label>
+               </div>
+            </div>
+            </div>
+        </div>
+        </div>
+</form>
+<div class="row show1"  style="background: #3aafd1;"  >
+    <div class="col-md-2">
+    <div class="filterbox">
+     <label class="label_bold_18">Customer ID</label>
+     <input ng-model = "search.customerId" >
+     </div>
+    </div>
+    <div class="col-md-2">
+    <div class="filterbox"> 
+     <label class="label_bold_18">Name</label>
+     <input ng-model = "search.name"  >
+     </div>
+    </div>
+    <div class="col-md-2">
+     <label class="label_bold_18">Start Date</label>
+    </div>
+    <div class="col-md-2">
+     <label class="label_bold_18">Total Amount</label>
+    </div>
+    <div class="col-md-2">
+     <label class="label_bold_18">Paid</label>
+    </div>
+    <div class="col-md-2">
+     <label class="label_bold_18">Due</label>
+    </div>
+   </div>
+   <div class="row show1" ng-repeat="customer in customerObj  | filter:{customerId:search.customerId,name:search.name}"
+    ng-click="displayItemInfo(customer)" style="cursor: pointer;"
+    ng-class-odd="'odd'" ng-class-even="'even'">
+    <div class="col-md-2">
+     <label class="lable16"><a href="#" ng-click="customer.isCollapsed = !customer.isCollapsed" title="Make Payment">{{customer.customerId}}</a></label>
+    </div>
+    <div class="col-md-2" >
+     <label class="lable16">{{customer.name}}</label>
+    </div>
+    <div class="col-md-2">
+     <label class="lable16">{{customer.startDate}}</label>
+    </div>
+    <div class="col-md-2">
+     <label class="lable16">{{customer.totalAmount}}</label>
+    </div>
+    <div class="col-md-2">
+     <label class="lable16">{{customer.paid}}</label>
+    </div>
+    <div class="col-md-2">
+     <label class="lable16">{{customer.due}}</label>
+    </div>
+    
+    <div style="clear: both;"></div>
+		<div class="row" ng-if="customer.isCollapsed">
+		<div class = "plate onExpand">
+		<div class="col-md-3">
+		   <input type="text" class="input" ng-model="customerAccount.onDateCollection" placeholder="Amount"></div>
+		   <div class="col-md-3">
+		   <Select  class="input" ng-model="customerAccount.paymentStatus">
+			<option value=""> Payment Status </option>
+			<option>Paid</option>
+			<option>Postponed</option>
+			</Select>
+		   </div>
+		    <div class="col-md-3">
+		    <div ng-if="customerAccount.paymentStatus == 'Paid'">
+		    <input type="text" class="input" uib-datepicker-popup="{{dateFormat}}" is-open="payedDatePopup.opened" datepicker-options="payedDateOptions" close-text="Close" alt-input-formats="altInputFormats" ng-model="customerAccount.paidOn"
+                  placeholder="Paid On"/>
+                  <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="payedDateopen()"><i class="glyphicon glyphicon-calendar"></i></button>
+           </span></div>
+           
+            <div ng-if="customerAccount.paymentStatus == 'Postponed'">
+            <input type="text" class="input" uib-datepicker-popup="{{dateFormat}}" is-open="postDatePopup.opened" datepicker-options="postDateOptions" close-text="Close" alt-input-formats="altInputFormats" ng-model="customerAccount.postponedTo"
+                  placeholder="Postponed To"/>
+                  <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="postDateopen()"><i class="glyphicon glyphicon-calendar"></i></button>
+           
+            </span>
+		    </div></div>
+			 <div class="col-md-3">
+			  <a href="#" ng-click="save(customerAccount, customer.customerId)" class="button">Submit</a>
+			 </div>
+			</div>
+		</div>
+    
+   </div>
+
+	
+
+	<div class="row show2">
+    <div class="row mblSearchPad" >
+    <input type="text" class="myinput" ng-model = "search.customerId" placeholder="customerId">
+   <input  type="text"  class="myinput" ng-model = "search.name" placeholder="name">
+    </div> 
+	
+	 <div  class="row show2" ng-repeat="customer in customerObj  | filter:{customerId:search.customerId,name:search.name}"
+    ng-click="displayItemInfo(customer)" style="cursor: pointer;"
+    ng-class-odd="'even'" ng-class-even="'odd'">
+    <div class="col-xs-12">
+    <div class="row col-xs-12 topbtmspace" >
+     <div class="col-xs-6 "><label class="label_bold_18">Customer ID</label></div>
+     <div class="col-xs-6 "><label class="lable16"><a href="#" ng-click="customer.isCollapsed = !customer.isCollapsed" title="Make Payment">{{customer.customerId}}</a></label></div>
+    </div>
+    <div class="row col-xs-12 topbtmspace">
+     <div class="col-xs-6 "><label class="label_bold_18">Name</label></div>
+     <div class="col-xs-6  "><label class="lable16">{{customer.name}}</label></div>
+    </div>
+        <div class="row col-xs-12 topbtmspace">
+     <div class="col-xs-6  "><label class="label_bold_18">Start Date</label></div>
+     <div class="col-xs-6"><label class="lable16">{{customer.startDate}}</label></div>
+    </div>
+     <div class="row col-xs-12 topbtmspace">
+     <div class="col-xs-6  "><label class="label_bold_18">Total Amount</label></div>
+     <div class="col-xs-6"><label class="lable16">{{customer.totalAmount}}</label></div>
+    </div>
+     <div class="row col-xs-12 topbtmspace">
+     <div class="col-xs-6  "><label class="label_bold_18">Paid</label></div>
+     <div class="col-xs-6"><label class="lable16">{{customer.paid}}</label></div>
+    </div>
+     <div class="row col-xs-12 topbtmspace">
+     <div class="col-xs-6  "><label class="label_bold_18">Due</label></div>
+     <div class="col-xs-6"><label class="lable16">{{customer.due}}</label></div>
+    </div>
+    </div>
+    
+    <div style="clear: both;"></div>
+		<div class="row" ng-if="customer.isCollapsed">
+		<div class="plate">
+		<div class="col-md-3">
+		   <input type="text" class="input " ng-model="customerAccount.onDateCollection" placeholder="Amount"></div>
+		   <div class="col-md-3">
+		   <Select  class="input " ng-model="customerAccount.paymentStatus">
+			<option value=""> Payment Status </option>
+			<option>Paid</option>
+			<option>Postponed</option>
+			</Select>
+		   </div>
+		    <div class="col-md-3">
+		    <div ng-if="customerAccount.paymentStatus == 'Paid'">
+		    <input type="text" class="input " uib-datepicker-popup="{{dateFormat}}" is-open="payedDatePopup.opened" datepicker-options="payedDateOptions" close-text="Close" alt-input-formats="altInputFormats" ng-model="customerAccount.paidOn"
+                  placeholder="Payed On"/>
+                  <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="payedDateopen()"><i class="glyphicon glyphicon-calendar"></i></button>
+           </span></div>
+           
+            <div ng-if="customerAccount.paymentStatus == 'Postponed'">
+            <input type="text" class="input " uib-datepicker-popup="{{dateFormat}}" is-open="postDatePopup.opened" datepicker-options="postDateOptions" close-text="Close" alt-input-formats="altInputFormats" ng-model="customerAccount.postponedTo"
+                  placeholder="Postponed To"/>
+                  <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="postDateopen()"><i class="glyphicon glyphicon-calendar"></i></button>
+           
+            </span>
+		    </div></div>
+			 <div class="col-md-3">
+			 <a href="#" ng-click="save(customerAccount, customer.customerId)" class="button">Submit</a>
+			 </div>
+			 
+		</div>
+		</div>
+   </div>
+</div>
+</div>
