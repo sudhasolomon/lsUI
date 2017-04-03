@@ -75,11 +75,11 @@
 		} 
 		
 		$scope.getDailyAmount = function(){
-			if($scope.customer.amountToCustomer && $scope.customer.noOfDays && $scope.customer.financeType){
+			if($scope.customer.totalAmount && $scope.customer.noOfDays && $scope.customer.financeType){
 				
-				var amountToCustomer = $scope.customer.amountToCustomer;
+				var totalAmount = $scope.customer.totalAmount;
 				var noOfDays = $scope.customer.noOfDays;
-				$scope.customer.amountPerType = amountToCustomer/noOfDays;
+				$scope.customer.amountPerType = totalAmount/noOfDays;
 			}
 			
 		}
@@ -88,7 +88,7 @@
 			var newStartDate = dateRangeService.formatDate_india(customer.startDate);
 //			alert("create customer "+ newStartDate);
 			customer.startDate = newStartDate;
-//			alert("create customer "+ JSON.stringify(customer));
+			alert("create customer "+ JSON.stringify(customer));
 			if($stateParams.customerId > 0 ){
 				if(customer.financeStatus == "Closed"){
 					if(customer.totalAmount == customer.paid){
@@ -112,7 +112,7 @@
 			response.success(function(data, headers, status, config){
 				if($stateParams.customerId > 0 ){
 					$scope.success = true;
-					$scope.succMsg = "Customer Closed Successfully"
+					$scope.succMsg = "Customer Updated Successfully"
 				}else{
 					$state.transitionTo("viewCustomerModule");
 				}

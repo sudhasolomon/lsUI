@@ -1,8 +1,10 @@
 <div ng-controller = "dailyViewController" ng-init = "onload()">
 
+<div class="headertags">Customer Daily View</div>
+<br><br>
 <form name="dailyView" ng-submit="">
   <div class = "row">
-     <div class="alert alert-info">
+     <div ><!-- class="alert alert-info" -->
             <div class="form-inline">
             <div class = "row radiobutton">
             <div class="col-md-2">
@@ -30,7 +32,7 @@
                </div>
                <div class="col-md-2">
                 <label >
-                <button ng-click="getMyDailyView()" class="mybutton">View</button>
+                <button type="submit" ng-click="getMyDailyView()" class="tags1">View</button>
                 
                 </label>
                </div>
@@ -39,17 +41,17 @@
         </div>
         </div>
 </form>
-<div class="row show1"  style="background: #3aafd1;"  >
+<div class="row tablerow show1"  >
     <div class="col-md-2">
     <div class="filterbox">
-     <label class="label_bold_18">Customer ID</label>
-     <input ng-model = "search.customerId" >
+     <label class="label_bold_18">Cust ID</label>
+     <input class="inputFocus" placeholder="  Search" ng-model = "search.customerId" >
      </div>
     </div>
     <div class="col-md-2">
     <div class="filterbox"> 
      <label class="label_bold_18">Name</label>
-     <input ng-model = "search.name"  >
+     <input class="inputFocus" placeholder="  Search" ng-model = "search.name"  >
      </div>
     </div>
     <div class="col-md-2">
@@ -89,111 +91,134 @@
     
     <div style="clear: both;"></div>
 		<div class="row" ng-if="customer.isCollapsed">
-		<div class = "plate onExpand">
+		<div class="row">
 		<div class="col-md-3">
-		   <input type="text" class="input" ng-model="customerAccount.onDateCollection" placeholder="Amount"></div>
+		<div class="form-group">
+		   <input type="text" class="form-control" ng-model="customerAccount.onDateCollection" placeholder="Amount"></div></div>
 		   <div class="col-md-3">
-		   <Select  class="input" ng-model="customerAccount.paymentStatus">
+		   <div class="form-group">
+		   <Select  class="form-control" ng-model="customerAccount.paymentStatus">
 			<option value=""> Payment Status </option>
 			<option>Paid</option>
 			<option>Postponed</option>
 			</Select>
+			</div>
 		   </div>
-		    <div class="col-md-3">
+		    
 		    <div ng-if="customerAccount.paymentStatus == 'Paid'">
-		    <input type="text" class="input" uib-datepicker-popup="{{dateFormat}}" is-open="payedDatePopup.opened" datepicker-options="payedDateOptions" close-text="Close" alt-input-formats="altInputFormats" ng-model="customerAccount.paidOn"
-                  placeholder="Paid On"/>
+		    <div class="col-md-3">
+		    <div class="form-group">
+		    
+		    <div class="input-group">
+		    <input type="text" class="form-control" uib-datepicker-popup="{{dateFormat}}" is-open="payedDatePopup.opened" datepicker-options="payedDateOptions" close-text="Close" alt-input-formats="altInputFormats" ng-model="customerAccount.paidOn"
+                  placeholder="Paid On" readonly="true"/>
                   <span class="input-group-btn">
             <button type="button" class="btn btn-default" ng-click="payedDateopen()"><i class="glyphicon glyphicon-calendar"></i></button>
-           </span></div>
+           </span></div></div>
+           </div></div>
            
             <div ng-if="customerAccount.paymentStatus == 'Postponed'">
-            <input type="text" class="input" uib-datepicker-popup="{{dateFormat}}" is-open="postDatePopup.opened" datepicker-options="postDateOptions" close-text="Close" alt-input-formats="altInputFormats" ng-model="customerAccount.postponedTo"
+             <div class="col-md-3">
+		    <div class="form-group">
+            <div class="input-group">
+            <input type="text" class="form-control" uib-datepicker-popup="{{dateFormat}}" is-open="postDatePopup.opened" datepicker-options="postDateOptions" close-text="Close" alt-input-formats="altInputFormats" ng-model="customerAccount.postponedTo"
                   placeholder="Postponed To"/>
                   <span class="input-group-btn">
             <button type="button" class="btn btn-default" ng-click="postDateopen()"><i class="glyphicon glyphicon-calendar"></i></button>
            
-            </span>
+            </span></div>
+		    </div>
+		    
 		    </div></div>
 			 <div class="col-md-3">
-			  <a href="#" ng-click="save(customerAccount, customer.customerId)" class="button">Submit</a>
+			 <div class="form-group">
+			  <a href="#" ng-click="save(customerAccount, customer.customerId)" class="tags1 pull-left">Submit</a>
 			 </div>
-			</div>
+			</div> 
 		</div>
-    
+    </div>
    </div>
 
 	
 
 	<div class="row show2">
-    <div class="row mblSearchPad" >
-    <input type="text" class="myinput" ng-model = "search.customerId" placeholder="customerId">
-   <input  type="text"  class="myinput" ng-model = "search.name" placeholder="name">
+    <div class="row " >
+    <div class="col-md-6">
+		<div class="form-group">
+    <input type="text" class="form-control" ng-model = "search.customerId" placeholder="customerId">
+    </div></div>
+    <div class="col-md-6">
+		<div class="form-group">
+   <input  type="text"  class="form-control" ng-model = "search.name" placeholder="name">
+   </div></div>
     </div> 
 	
 	 <div  class="row show2" ng-repeat="customer in customerObj  | filter:{customerId:search.customerId,name:search.name}"
     ng-click="displayItemInfo(customer)" style="cursor: pointer;"
-    ng-class-odd="'even'" ng-class-even="'odd'">
+    ng-class-odd="'even1'" ng-class-even="'odd1'">
     <div class="col-xs-12">
     <div class="row col-xs-12 topbtmspace" >
-     <div class="col-xs-6 "><label class="label_bold_18">Customer ID</label></div>
-     <div class="col-xs-6 "><label class="lable16"><a href="#" ng-click="customer.isCollapsed = !customer.isCollapsed" title="Make Payment">{{customer.customerId}}</a></label></div>
+     <div class="col-xs-6 "><label  >Customer ID</label></div>
+     <div class="col-xs-6 "><label style="cursor: pointer; color: #fff7b2" ng-click="customer.isCollapsed = !customer.isCollapsed" title="Make Payment">{{customer.customerId}}</label></div>
     </div>
     <div class="row col-xs-12 topbtmspace">
-     <div class="col-xs-6 "><label class="label_bold_18">Name</label></div>
-     <div class="col-xs-6  "><label class="lable16">{{customer.name}}</label></div>
+     <div class="col-xs-6 "><label >Name</label></div>
+     <div class="col-xs-6  "><label >{{customer.name}}</label></div>
     </div>
         <div class="row col-xs-12 topbtmspace">
-     <div class="col-xs-6  "><label class="label_bold_18">Start Date</label></div>
-     <div class="col-xs-6"><label class="lable16">{{customer.startDate}}</label></div>
+     <div class="col-xs-6  "><label >Start Date</label></div>
+     <div class="col-xs-6"><label >{{customer.startDate}}</label></div>
     </div>
      <div class="row col-xs-12 topbtmspace">
-     <div class="col-xs-6  "><label class="label_bold_18">Total Amount</label></div>
-     <div class="col-xs-6"><label class="lable16">{{customer.totalAmount}}</label></div>
+     <div class="col-xs-6  "><label >Total Amount</label></div>
+     <div class="col-xs-6"><label >{{customer.totalAmount}}</label></div>
     </div>
      <div class="row col-xs-12 topbtmspace">
-     <div class="col-xs-6  "><label class="label_bold_18">Paid</label></div>
-     <div class="col-xs-6"><label class="lable16">{{customer.paid}}</label></div>
+     <div class="col-xs-6  "><label>Paid</label></div>
+     <div class="col-xs-6"><label>{{customer.paid}}</label></div>
     </div>
      <div class="row col-xs-12 topbtmspace">
-     <div class="col-xs-6  "><label class="label_bold_18">Due</label></div>
-     <div class="col-xs-6"><label class="lable16">{{customer.due}}</label></div>
+     <div class="col-xs-6  "><label >Due</label></div>
+     <div class="col-xs-6"><label >{{customer.due}}</label></div>
     </div>
     </div>
     
     <div style="clear: both;"></div>
 		<div class="row" ng-if="customer.isCollapsed">
-		<div class="plate">
 		<div class="col-md-3">
-		   <input type="text" class="input " ng-model="customerAccount.onDateCollection" placeholder="Amount"></div>
+		<div class="form-group">
+		   <input type="text" class="form-control" ng-model="customerAccount.onDateCollection" placeholder="Amount">
+		   </div></div>
 		   <div class="col-md-3">
-		   <Select  class="input " ng-model="customerAccount.paymentStatus">
+		   <div class="form-group">
+		   <Select  class="form-control" ng-model="customerAccount.paymentStatus">
 			<option value=""> Payment Status </option>
 			<option>Paid</option>
 			<option>Postponed</option>
 			</Select>
-		   </div>
+		   </div></div>
 		    <div class="col-md-3">
+		    <div class="form-group">
 		    <div ng-if="customerAccount.paymentStatus == 'Paid'">
-		    <input type="text" class="input " uib-datepicker-popup="{{dateFormat}}" is-open="payedDatePopup.opened" datepicker-options="payedDateOptions" close-text="Close" alt-input-formats="altInputFormats" ng-model="customerAccount.paidOn"
+		    <input type="text" class="form-control"  uib-datepicker-popup="{{dateFormat}}" is-open="payedDatePopup.opened" datepicker-options="payedDateOptions" close-text="Close" alt-input-formats="altInputFormats" ng-model="customerAccount.paidOn"
                   placeholder="Payed On"/>
                   <span class="input-group-btn">
             <button type="button" class="btn btn-default" ng-click="payedDateopen()"><i class="glyphicon glyphicon-calendar"></i></button>
            </span></div>
            
             <div ng-if="customerAccount.paymentStatus == 'Postponed'">
-            <input type="text" class="input " uib-datepicker-popup="{{dateFormat}}" is-open="postDatePopup.opened" datepicker-options="postDateOptions" close-text="Close" alt-input-formats="altInputFormats" ng-model="customerAccount.postponedTo"
+            <input type="text" class="form-control" uib-datepicker-popup="{{dateFormat}}" is-open="postDatePopup.opened" datepicker-options="postDateOptions" close-text="Close" alt-input-formats="altInputFormats" ng-model="customerAccount.postponedTo"
                   placeholder="Postponed To"/>
                   <span class="input-group-btn">
             <button type="button" class="btn btn-default" ng-click="postDateopen()"><i class="glyphicon glyphicon-calendar"></i></button>
            
             </span>
-		    </div></div>
+		    </div></div></div>
 			 <div class="col-md-3">
-			 <a href="#" ng-click="save(customerAccount, customer.customerId)" class="button">Submit</a>
-			 </div>
+			 <div class="form-group">
+			 <a href="#" ng-click="save(customerAccount, customer.customerId)" class="tags1 pull-left">Submit</a>
+			 </div></div>
 			 
-		</div>
 		</div>
    </div>
 </div>

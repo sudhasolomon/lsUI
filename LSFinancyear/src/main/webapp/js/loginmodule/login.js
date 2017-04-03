@@ -68,14 +68,13 @@
 		 }
 		 
 		 $scope.registerUser = function(user){
-			 alert("dhfjfhdgj"+JSON.stringify(user));
 			 
 			 var response = $http.post("/LSFinanceService/login/saveOrUpdateUser", user);
 			 response.success(function(data,status,config,headers){
-				alert("success "+JSON.stringify(data)); 
+//				alert("success "+JSON.stringify(data)); 
 				if(data.statusCode == 200){
 					$scope.successFlag = true;
-					alert("success");
+//					alert("success");
 					$scope.successMessage = data.statusMessage;
 				}else{
 					$scope.rejectFlag = true;

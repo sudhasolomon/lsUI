@@ -1,97 +1,119 @@
 <div ng-controller="addCustomerController" ng-init="onload()">
-<div class="container">
+
+<div class="headertags">Add Customer</div>
+<br><br>
 <form  novalidate=""
-		ng-submit=""   name="custom-form" class="custom-form"> 
-	
-		<div class="header">
-							<h1>{{customerPageType}}</h1>
-						</div>
-	
-		<div class="content">
-				<div class="row">
+		ng-submit=""> 
+	  <div class="row">
+        <div class="col-md-12">
+        <div class="row">
 					<div class="col-md-6">
 					
 						<input type="hidden" class="input password"
 							ng-model="customer.customerId"> 
-				<input type="text" class="input password" ng-model="customer.name" placeholder="Customer Name" required="">
-					</div>
+							
+				 <div class="form-group">
+                <label class="control-label">Customer Name</label>
+					<input type="text" class="form-control" ng-model="customer.name" placeholder="Customer Name" required="">
+					</div></div>
 					<div class="col-md-6">
-					<input type="text" class="input password" ng-model="customer.phone"
+					 <div class="form-group">
+                <label class="control-label">Phone Number</label>
+					<input type="text" class="form-control" ng-model="customer.phone"
 							placeholder="Phone Number">
 					</div>
-				</div>
-				 
-				<div class="row">
-					<div class="col-md-6">
-					<input type="text" class="input password"
-							ng-model="customer.address" placeholder="Address">
 					</div>
+				</div>
+				
+					<div class="row">
 					<div class="col-md-6">
-						<div class="row">
-							<div class="col-md-9">
-								<input type="text" class="input password"
-									uib-datepicker-popup="{{dateFormat}}"
-									is-open="DatePopup.opened" datepicker-options="DateOptions"
-									close-text="Close" alt-input-formats="altInputFormats"
-									ng-model="customer.startDate" placeholder="Start Date" />
-							</div>
-							<div class="col-md-3">
-								<button type="button" class="btn btn-default"
-									ng-click="Dateopen()">
-									<i class="glyphicon glyphicon-calendar"></i>
-								</button>
-							</div>
-						</div>
+					 <div class="form-group">
+                <label class="control-label">Address</label>
+					<input type="text" class="form-control"
+							ng-model="customer.address" placeholder="Address">
+					</div></div>
+					<div class="col-md-6">
+							 <div class="form-group">
+                				<label class="control-label">Start Date</label>
+                				 <div class="input-group">
+								<input type="text" class="form-control"	uib-datepicker-popup="{{dateFormat}}" is-open="DatePopup.opened" datepicker-options="DateOptions" close-text="Close" alt-input-formats="altInputFormats"
+									ng-model="customer.startDate" placeholder="Start Date" readonly="true"/>
+							 <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="Dateopen()"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span></div>
+							 </div> 
 					</div>
 				 </div>
 				 
-				<div class="row">
+				 	<div class="row">
 					<div class="col-md-6">
-						<Select class="input password" ng-model="customer.financeStatus">
+					 <div class="form-group">
+                <label class="control-label">Finance Status</label>
+						<Select class="form-control" ng-model="customer.financeStatus">
 							<option value="">Finance Status</option>
 							<option>Started</option>
 							<option>Closed</option>
 						</Select>
-					</div>
+					</div></div>
 					<div class="col-md-6">
-						<input type="text" class="input password"
+					 <div class="form-group">
+                <label class="control-label">Total Amount</label>
+						<input type="text" class="form-control"
 							ng-model="customer.totalAmount" placeholder="Total Amount">
+					</div></div>
 					</div>
-					</div>
-	 
-				<div class="row">
+					
+					
+					<div class="row">
 					<div class="col-md-6">
-						<input type="text" class="input password"
+					 <div class="form-group">
+                <label class="control-label">Rate Of Interest</label>
+						<input type="text" class="form-control"
 							ng-model="customer.interest" placeholder="Interest"
 							ng-change="getAmountToPay()">
-					</div>
+					</div></div>
 					<div class="col-md-6">
-						<input type="text" class="input password"
+					 <div class="form-group">
+                <label class="control-label">Amount To Customer</label>
+						<input type="text" class="form-control"
 							ng-model="customer.amountToCustomer"
 							placeholder="Amount To Customer" readonly="readonly">
-					</div>
+					</div></div>
 				</div>
-				<div class="row">
+				
+				
+					<div class="row">
 
 					<div class="col-md-6">
-						<Select class="input password" ng-model="customer.financeType"
+					 <div class="form-group">
+                <label class="control-label">Finance Type</label>
+						<Select class="form-control" ng-model="customer.financeType"
 							ng-change="getFinanceDays()">
 							<option value="">Finance Type</option>
 							<option>Daily</option>
 							<option>Weekly</option>
 							<option>Monthly</option>
 						</Select>
-					</div>
+					</div></div>
 					<div class="col-md-6">
-						<input type="text" class="input password"
+					 <div class="form-group">
+                <label class="control-label">Payment Type</label>
+						<input type="text" class="form-control"
 							ng-model="customer.noOfDays" placeholder="{{daysToPay}}"
 							ng-change="getDailyAmount()">
-					</div>
+					</div></div>
 				</div>
-				<div class="row">
-					 <div class="col-md-6"><input type="text" class="input password"
+				
+				
+					<div class="row">
+					
+					 <div class="col-md-6">
+					 
+					  <div class="form-group">
+                <label class="control-label">Amount To Pay</label>
+					 <input type="text" class="form-control"
 							ng-model="customer.amountPerType" readonly="readonly"
-							placeholder="{{customer.type}} Amount To Pay"></div>
+							placeholder="{{customer.type}} Amount To Pay"></div></div>
 					 <div class="col-md-6"></div>
 					 
 
@@ -99,26 +121,41 @@
 						
 					 
 				</div>
-<!-- 
-				<div class="row">
+				
+        </div>
+        </div>
+	
+				
 				 
+			
+				 
+			
+	 
+				
+			
+			
+
+				<div class="row">
+				 <div class="col-md-6">
+				 </div>
 					<div class="col-md-6">
-						<div class="pull-right">
-							<button type="submit" ng-click="" class="btn blue">Add
+					<div class="col-md-3">
+						 
+							<button type="submit" ng-click="createCustomer(customer)" class="tags1">Add
 							</button>
-							<button type="button" class="btn grey-cascade" ng-click="">
-								Reset <i class="fa fa-refresh"></i>
-							</button>
+							</div>
+							<div class="col-md-3">
+							
+							<button type="button" class="tags1" ng-click="Reset(customer)">Reset</button>
 						</div>
 					</div>
-				</div> -->
-		</div>
-		<div class="footer">
-							<button ng-click="createCustomer(customer)" class="button">Add</button>
+				</div>
+<!-- 		<div class="footer">
+							<button ng-click="createCustomer(customer)" class="tags1">Add</button>
 							
-							<button ng-click="Reset(customer)" class="button">Reset</button>
+							<button ng-click="Reset(customer)" class="tags1">Reset</button>
 							 
-						</div>
+						</div> -->
 	</form>
-	</div>
+	
 </div>

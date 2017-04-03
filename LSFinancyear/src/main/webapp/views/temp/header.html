@@ -1,7 +1,75 @@
 <div class="page-header-inner" ng-controller="headerController">
 
+<div class = "row"> 
+<div class="col-md-10">
+<div ><img style="width:40%;" alt="" src="img/ls_logo.png"></div>
+</div>
+<div class="col-md-2 profileMenu" >
 
-<div class="col-md-4 col-sm-6 col-xs-10"><img style="width:100%;padding:10px;" alt="" src="img/ls_logo.png"></div>
+<!--   <div class="dropdown">
+    <div class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Tutorials
+    <span class="caret"></span></div>
+    <ul class="dropdown-menu">
+      <li class="dropdown-header">Dropdown header 1</li>
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">JavaScript</a></li>
+      <li class="divider"></li>
+      <li class="dropdown-header">Dropdown header 2</li>
+      <li><a href="#">About Us</a></li>
+    </ul>
+  </div> -->
+  
+  <div class="btn-group" dropdown>
+            <button type="button"
+                    class="btn  dropdown-toggle"
+                    dropdown-toggle>
+                {{loginUser.userName}} <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li>
+                    <a href="#">THEAME</a>
+                </li>  
+                <li>
+                    <a href="#">LOG OUT</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="#">Separated link</a>
+                </li>
+            </ul>
+        </div>
+        
+  
+</div>
 
- 
+<!-- <div class="col-md-2 menu"  data-spy="scroll" data-offset="0" data-target="#theMenu">
+	
+      <nav  id="theMenu">	
+		<div class="menu-wrap">
+			<img id="Image"/>
+			<h1 class="logo"><a href="#">{{loginUser.firstName}} {{loginUser.lastName}}</a></h1>
+			<i class="icon-remove menu-close"></i>
+			<a href="#/dashboard" class="smoothScroll ">Dash Board </a>
+			<a href="#/dailyView" class="smoothScroll ">Daily View </a>
+			<a href="#/add/0" class="smoothScroll">Add Customer</a>
+			<a href="#/view" class="smoothScroll">view Customer</a>
+			<a href="#/accounts" class="smoothScroll">Accounts</a>
+			<h1 class="logo"><a href="#">Settings</a></h1>
+			<a href="#/profile" class="smoothScroll">Profile</a>
+			<a href="#/changepassword" class="smoothScroll">Change password</a>
+			<a href="#" class="smoothScroll" ng-click="logout()">Logout</a>
+			<a href="#"><i class="icon-facebook"></i></a>
+			<a href="#"><i class="icon-twitter"></i></a>
+			<a href="#"><i class="icon-dribbble"></i></a>
+			<a href="#"><i class="icon-envelope"></i></a>
+		</div>
+		
+		Menu button
+		<div id="menuToggle"><i class="icon-reorder"></i></div>
+	</nav>
+
+</div> -->
+</div>
+
 </div>

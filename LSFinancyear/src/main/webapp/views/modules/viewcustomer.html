@@ -1,13 +1,14 @@
 <div   ng-controller="viewCustomerController" ng-init="onload()">
 
-
+<div class="headertags">View Customers</div>
+<br><br>
 
 <div class="row">
 <!--   <div class="alert alert-info">
             <div class="form-inline"> -->
-            <div class = "row plate">
 		<div class="col-md-3">
-			<Select  class="input" ng-model="finance.month">
+		<div class="form-group">
+			<Select  class="form-control" ng-model="finance.month">
 			 <option value=''>--Select Month--</option>
     <option selected value='0'>Janaury</option>
     <option value='1'>February</option>
@@ -22,48 +23,50 @@
     <option value='10'>November</option>
     <option value='11'>December</option>
 			</Select>
-		</div>
+		</div></div>
 		
 		<div class="col-md-3">
-			<Select  class="input" ng-model="finance.year">
+		<div class="form-group">
+			<Select  class="form-control" ng-model="finance.year">
 			 <option value=''>--Select Year--</option>
     <option selected value='2015'>2015</option>
     <option value='2016'>2016</option>
     <option value='2017'>2017</option>
     <option value='2018'>2018</option>
 			</Select>
-		</div>
+		</div></div>
 		<div class="col-md-3">
-			<Select  class="input" ng-model="finance.financeStatus">
+		<div class="form-group">
+			<Select  class="form-control" ng-model="finance.financeStatus">
 			<option value=""> Finance Status </option>
 			<option>Started</option>
 			<option>Closed</option>
 			</Select>
-		</div>
+		</div></div>
 		<!-- <div class="col-md-2">
 			<input  class="input" ng-model="finance.customerName">
 		</div>
 		 -->
 		<div class="col-md-3">
-		<button ng-click="searchCustomer(finance)" class="button">Search</button>
+		<div class="form-group">
+		<button ng-click="searchCustomer(finance)" class="tags1 pull-left">Search</button>
 		<!--  <button type="button" ng-click="searchCustomer(finance)" class="btn blue" >Search </button> -->
-		</div>
-		</div>
+		</div></div>
 	 
 	</div>
 	
-	
-	<div class="row show1" style="background: #3aafd1;">
+	<br>
+	<div class="row tablerow show1" >
 		<div class="col-md-2">
 			 <div class="filterbox">
-     <label class="label_bold_18">Customer ID</label>
-     <input ng-model = "search.customerId" >
+     <label class="label_bold_18">Cust ID</label>
+     <input class="inputFocus" placeholder="  Search" ng-model = "search.customerId" >
      </div>
 		</div>
 		<div class="col-md-2">
 			<div class="filterbox"> 
      <label class="label_bold_18">Name</label>
-     <input ng-model = "search.name"  >
+     <input class="inputFocus" placeholder="  Search" ng-model = "search.name"  >
      </div>
 		</div>
 		<div class="col-md-2">
@@ -105,38 +108,44 @@
 	
 	
 	<div class="row show2">
-    <div class="row mblSearchPad" >
-    <input type="text" class="myinput" ng-model = "search.customerId" placeholder="customerId">
-   <input  type="text"  class="myinput" ng-model = "search.name" placeholder="name">
+        <div class="row " >
+    <div class="col-md-6">
+		<div class="form-group">
+     <input type="text" class="form-control" ng-model = "search.customerId" placeholder="customerId">
+    </div></div>
+    <div class="col-md-6">
+		<div class="form-group">
+  <input  type="text"  class="form-control" ng-model = "search.name" placeholder="name">
+   </div></div>
     </div> 
 	
 	 <div  class="row show2" ng-repeat="customer in customerObj | filter:{customerId:search.customerId,name:search.name}"
     ng-click="displayItemInfo(customer)" style="cursor: pointer;"
-    ng-class-odd="'even'" ng-class-even="'odd'">
+    ng-class-odd="'even1'" ng-class-even="'odd1'">
     <div class="col-xs-12">
     <div class="row col-xs-12 topbtmspace" >
-     <div class="col-xs-6 "><label class="label_bold_18">Customer ID</label></div>
-     <div class="col-xs-6 "><label class="lable16"><a ng-click = "getCustomerAccounts(customer.customerId)">{{customer.customerId}}</a></label></div>
+     <div class="col-xs-6 "><label >Customer ID</label></div>
+     <div class="col-xs-6 "><label  style="cursor: pointer; color: #fff7b2" ng-click = "getCustomerAccounts(customer.customerId)">{{customer.customerId}}</label></div>
     </div>
     <div class="row col-xs-12 topbtmspace">
-     <div class="col-xs-6 "><label class="label_bold_18">Name</label></div>
-     <div class="col-xs-6  "><label class="lable16"><a ng-click = "editCustomer(customer.customerId)">{{customer.name}}</a></label></div>
+     <div class="col-xs-6 "><label >Name</label></div>
+     <div class="col-xs-6  "><label style="cursor: pointer; color: #fff7b2"  ng-click = "editCustomer(customer.customerId)">{{customer.name}}</label></div>
     </div>
         <div class="row col-xs-12 topbtmspace">
-     <div class="col-xs-6  "><label class="label_bold_18">Start Date</label></div>
-     <div class="col-xs-6"><label class="lable16">{{customer.startDate}}</label></div>
+     <div class="col-xs-6  "><label >Start Date</label></div>
+     <div class="col-xs-6"><label >{{customer.startDate}}</label></div>
     </div>
      <div class="row col-xs-12 topbtmspace">
-     <div class="col-xs-6  "><label class="label_bold_18">Total Amount</label></div>
-     <div class="col-xs-6"><label class="lable16">{{customer.totalAmount}}</label></div>
+     <div class="col-xs-6  "><label  >Total Amount</label></div>
+     <div class="col-xs-6"><label  >{{customer.totalAmount}}</label></div>
     </div>
      <div class="row col-xs-12 topbtmspace">
-     <div class="col-xs-6  "><label class="label_bold_18">Paid</label></div>
-     <div class="col-xs-6"><label class="lable16">{{customer.paid}}</label></div>
+     <div class="col-xs-6  "><label  >Paid</label></div>
+     <div class="col-xs-6"><label >{{customer.paid}}</label></div>
     </div>
      <div class="row col-xs-12 topbtmspace">
-     <div class="col-xs-6  "><label class="label_bold_18">Due</label></div>
-     <div class="col-xs-6"><label class="lable16">{{customer.due}}</label></div>
+     <div class="col-xs-6  "><label  >Due</label></div>
+     <div class="col-xs-6"><label >{{customer.due}}</label></div>
     </div>
     </div>
    </div>

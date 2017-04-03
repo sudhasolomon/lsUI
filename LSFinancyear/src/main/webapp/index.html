@@ -6,12 +6,13 @@
 <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 <link href="css/font-awesome/css/bootstrap.css" rel="stylesheet">
 <link type="text/css" href="css/styles.css" rel="stylesheet">
-<link type="text/css" href="css/bootstrap.css" rel="stylesheet">
-<link type="text/css" href="css/animate.css" rel="stylesheet">
-<link type="text/css" href="css/bootstrap-theme.css" rel="stylesheet">
-<link type="text/css" href="css/components.css" rel="stylesheet">
+<!-- <link type="text/css" href="css/bootstrap.css" rel="stylesheet"> -->
+
+<link type="text/css" href="css/darkblue.css" rel="stylesheet">
+<!-- <link type="text/css" href="css/bootstrap-theme.css" rel="stylesheet"> -->
+<!-- <link type="text/css" href="css/components.css" rel="stylesheet"> -->
 <link type="text/css" href="css/layout.css" rel="stylesheet">
-<link type="text/css" href="css/custom.min.css" rel="stylesheet">
+<!-- <link type="text/css" href="css/custom.min.css" rel="stylesheet"> -->
 <!-- css for toggle -->
  <link type="text/css" href="css/main.css" rel="stylesheet">
  <link href="css/loginform-style.css" rel="stylesheet">
@@ -19,11 +20,12 @@
 
 
 </head>
-<header class="navbar  navbar-fixed-top">
+<header>
     <div  data-ng-include="'views/temp/header.html'" data-ng-controller="headerController" > </div>
   </header>
-  <div class="magicdiv"></div>
-<body data-spy="scroll" data-offset="0" data-target="#theMenu">
+
+ 
+ <body data-spy="scroll" data-offset="0" >
 <div class="page-container">
 <!-- <div class="page-container"> -->
 <!-- <div class="img"> -->
@@ -40,7 +42,8 @@
   </div>
  -->
 <!-- <i class="fa fa-users" aria-hidden="true"></i> -->
-	<nav class="menu" id="theMenu">	
+ <div data-ng-include="'views/temp/sidebar.html'" data-ng-controller="sidebarController" class="page-sidebar-wrapper" style="position: fixed;"> </div>
+<nav class="menu" id="theMenu">	
 		<div class="menu-wrap">
 			<img id="Image"/>
 			<h1 class="logo"><a href="#">{{loginUser.firstName}} {{loginUser.lastName}}</a></h1>
@@ -63,7 +66,7 @@
 		<!-- Menu button -->
 		<div id="menuToggle"><i class="icon-reorder"></i></div>
 	</nav>
-
+		
 
 <!-- <header>
     <div class="myheader" data-ng-include="'views/temp/header.html'" data-ng-controller="headerController" > </div>
@@ -74,13 +77,14 @@
 <!-- <div class="page-sidebar-wrapper" style="position: fixed;" data-ng-include = "'views/temp/sidebar.html'" data-ng-controller="sidebarController"></div> -->
 
 
-<!-- <div class="page-content-wrapper"> -->
-       <!--  <div class="page-content"> -->
+<div class="page-content-wrapper">
+        <div class="page-content">
        <!--    BEGIN ACTUAL CONTENT -->
-          <div ui-view> </div>
+   
+    <div ui-view> </div>
        <!--    END ACTUAL CONTENT -->
-        <!-- </div> -->
-    <!--   </div> -->
+        </div>
+      </div>
 
 
 
@@ -93,6 +97,7 @@
 
 
 <script type="text/javascript" src="js/angular/angular.min.js"></script>
+<script type="text/javascript" src="js/angular/ui-bootstrap-tpls.min.js"></script>
 <script type="text/javascript" src="js/angular/angular-block-ui.js"></script>
 <script type="text/javascript" src="js/angular/angular-sanitize.min.js"></script>
 <script type="text/javascript" src="js/angular/angular-touch.min.js"></script>
@@ -100,10 +105,10 @@
 <!-- <script type="text/javascript" src="js/angular/jquery-ui.min.js"></script> -->
 <script type="text/javascript" src="js/angular/angular-material.1.0.0.js"></script>
 <script type="text/javascript" src="js/angular/jcs-auto-validate.min.js"></script>
-<!-- <script type="text/javascript" src="js/angular/jquery.min.1.12.js"></script> -->
+<!-- <script type="text/javascript" src="js/angular/jquery3.1.1.min.js"></script> -->
 <script type="text/javascript" src="js/angular/jquery1.24.min.js"></script>
-<!-- <script type="text/javascript" src="js/angular/bootstrap.min.js"></script> -->
-<script type="text/javascript" src="js/angular/ui-bootstrap-tpls.min.js"></script>
+<script type="text/javascript" src="js/angular/bootstrap.min.js"></script>
+
 <script type="text/javascript" src="js/module/customermodule.js"></script>
 <script type="text/javascript" src="js/module/addcustomer.js"></script>
 <script type="text/javascript" src="js/module/viewcustomer.js"></script>

@@ -2,7 +2,7 @@
 /* Cubic Bezier Transition */
 @media print {
   body {
-    background-color: #e6f3ff !important; }
+    background-color: #fff !important; }
   .page-bar {
     display: none; }
   .page-sidebar-wrapper {
@@ -18,19 +18,14 @@
   .no-page-break {
     page-break-after: avoid; }
   .page-container {
-    margin-top: 50px !important;
-     margin-top: 100px !important;
+    margin: 0px !important;
     padding: 0px !important; }
   .page-content {
-  
     padding: 0 !important;
     min-height: 300px !important;
     padding: 0px 20px 20px !important;
     margin: 0 !important; } }
-.img{
-	background-image: url('../img/header-bg.jpg');
-	
-}
+
 /***
 Page Header
 ***/
@@ -687,7 +682,7 @@ Pace - Page Progress
 Page container
 ***/
 .page-container {
-  margin: 150px;
+  margin: 0px;
   padding: 0px;
   position: relative;
   /* Fixed header */
@@ -1018,7 +1013,7 @@ Page sidebar
     .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .sidebar-search.sidebar-search-bordered .input-group .input-group-btn .btn {
       margin-right: 6px; }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   /* 992px */
   .page-sidebar {
     width: 235px;
@@ -1288,7 +1283,7 @@ Page sidebar
     .page-sidebar-menu.page-sidebar-menu-light.page-sidebar-menu-hover-submenu li:hover > .sub-menu > li > .sub-menu {
       margin-top: -41px; } }
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   /* 991px */
   .page-sidebar {
     border-top: 0 !important;
@@ -1316,7 +1311,7 @@ Page sidebar
   .page-full-width .page-sidebar-menu {
     display: block; } }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 1000px) {
   /* 768px & 991px */
   .page-sidebar .btn-navbar.collapsed .arrow {
     display: none; }
@@ -1330,7 +1325,7 @@ Page sidebar
     border-left: 15px solid transparent;
     border-right: 15px solid transparent; } }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   /* 480px */
   /* Page sidebar */
   .page-sidebar,
@@ -1471,10 +1466,9 @@ Page content
 
 /* Page content */
 .page-content {
-  margin-top: 30px;
-  padding: 30px;
-  margin-right: 100px;
-  background-color: #e6f3ff; }
+  margin-top: 0px;
+  padding: 0px;
+  background-color: #fff; }
   .page-container-bg-solid .page-content {
     background: #eef1f5; }
   .page-content-white .page-content .page-bar {
@@ -1485,17 +1479,18 @@ Page content
   .page-full-width .page-content {
     margin-left: 0px !important; }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   /* 992px */
   /* Page content */
   .page-content-wrapper {
     float: left;
     width: 100%; }
     .page-content-wrapper .page-content {
-      margin-left: 100px;
-      margin-top: 50px;
-      min-height: 500px;
-      padding: 60px 20px 80px 20px; }
+      margin-left: 210px;
+      margin-top: 70px;
+      /* margin-bottom : 10px; */
+      min-height: 600px;
+      padding: 15px 20px 30px 20px; }
       .page-content-wrapper .page-content.no-min-height {
         min-height: auto; }
       .page-sidebar-fixed.page-sidebar-hover-on .page-content-wrapper .page-content {
@@ -1518,7 +1513,7 @@ Page content
       .page-full-width .page-content-wrapper .page-content {
         margin-left: 0px !important; } }
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   /* 991px */
   /* Bg solid content's breadcrumb */
   .page-content-white .page-bar,
@@ -1535,17 +1530,17 @@ Page content
     padding: 20px 20px 20px 20px !important;
     min-height: 280px; } }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px){
   /*  768px & 991px */
   /* Boxed page container */
   .page-boxed > .container {
     margin: auto !important; } }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   /* 767px */
   /* Page content */
   .page-content-wrapper .page-content {
-    padding: 20px 10px 10px 10px !important;
+    padding: 90px 10px 10px 10px !important;
     overflow: hidden;
     /* Page title */ }
     .page-content-wrapper .page-content .page-title {
@@ -1587,7 +1582,7 @@ Page footer
   .page-footer-fixed.page-footer-fixed-mobile.page-sidebar-fixed .page-footer {
     margin-left: 0 !important; }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   /* 992px */
   /* Default footer */
   .page-footer {

@@ -16,8 +16,9 @@
 			response.success(function(data, config, status, headers){
 			
 			if(data){
-				alert("success "+JSON.stringify(data));
-				$scope.info  = data[0] ;
+				$scope.info = {};
+				//$scope.info  = data[0] ;
+				$scope.customerObj = data;
 			}
 			});
 			response.error(function(data, config, status, headers){
@@ -26,7 +27,6 @@
 		}
 		
 		$scope.saveInfo = function(info){
-			alert(JSON.stringify(info));
 			
 			var response = $http.post('/LSFinanceService/addtionalInfo/saveAdditionalInfo', info);
 			response.success(function(data, config, status, headers){
@@ -37,6 +37,20 @@
 //				alert("error "+JSON.strinigfy(data));
 			});
 		}
+		
+		$scope.editInfo = function(obj){
+			//	alert(JSON.stringify(obj));
+				
+			var response = $http.post('/LSFinanceService/addtionalInfo/getAdditionalInfoById', obj);
+			response.success(function(data, config, status, headers){
+			alert("success "+JSON.stringify(data));
+				//$scope.onload();
+				$scope.info  = data;
+			});
+			response.error(function(data, config, status, headers){
+//				alert("error "+JSON.strinigfy(data));
+			});
+			}
 		
 		
 		$scope.DeleteInfo = function(info){

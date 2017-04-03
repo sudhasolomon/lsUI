@@ -1,45 +1,55 @@
 <div ng-controller = "userProfileController" ng-init="onload()">
 
-  
+<div class="headertags">Edit Profile</div>
+<br><br>
             
 				 
-					<form novalidate="" ng-submit=""  name="login-form-reg" class="login-form-reg"> 
+					<form novalidate="" ng-submit=""> 
 					<div class="row">
 						<div class="col-md-12">
-					<div class="header">
-							<h1>Edit Profile</h1>
-						</div>
 				 
-					<div class="content">
 					 <div class="row">
 					 <div class="col-md-6">
-						 <input  ng-model="user.firstName" type="text" class="input password"
+					 <div class="form-group">
+                <label class="control-label">First Name</label>
+						 <input  ng-model="user.firstName" type="text" class="form-control"
 								placeholder="Firstname" required="" />
-					</div>
+					</div></div>
 					<div class="col-md-6"> 
-						 <input  ng-model="user.lastName" type="text" class="input password"
+					
+					<div class="form-group">
+                <label class="control-label">Last Name</label>
+						 <input  ng-model="user.lastName" type="text" class="form-control"
 								placeholder="Lastname" required="" />
-					</div>
+					</div></div>
 					</div> 
 					<div class="row">
 					 <div class="col-md-6">
-						<input  ng-model="user.userName" type="text" class="input password"
+					 <div class="form-group">
+                <label class="control-label">User Name</label>
+						<input  ng-model="user.userName" type="text" class="form-control"
 								placeholder="Username" required="" />
-					</div>
+					</div></div>
 					 <div class="col-md-6">
-						<input  ng-model="user.address" type="text" class="input password"
+					 <div class="form-group">
+                <label class="control-label">Address</label>
+						<input  ng-model="user.address" type="text" class="form-control"
 								placeholder="Address" required="" />
 					</div>
 					</div>
 					<div class="row">
 					 <div class="col-md-6">
-						<input  ng-model="user.email" type="email" class="input password"
+					 <div class="form-group">
+                <label class="control-label">Email</label>
+						<input  ng-model="user.email" type="email" class="form-control"
 								placeholder="Email" required="" />
-					</div>
+					</div></div>
 					 <div class="col-md-6">
-						<input  ng-model="user.phoneNumber" type="text" class="input password"
+					 <div class="form-group">
+                <label class="control-label">Phone Number</label>
+						<input  ng-model="user.phoneNumber" type="text" class="form-control"
 								placeholder="Phone Number" required="" />
-					</div>
+					</div></div>
 					</div>
 					<!-- <div class="row">
 					 <div class="col-md-6">
@@ -51,13 +61,11 @@
 								placeholder="Confirm Password" required="" />
 						</div>		
 						</div> -->
-						</div>	 
-						<div class="footer">
-							<button ng-click="updateUser(user)" class="button">Update</button>
+						<br>
+							<button ng-click="updateUser(user)" class="tags1">Update</button>
 							<div ng-if="successFlag">
 								<div style="color: green">{{updated}}</div>
 							</div>
-						</div>
 					 
 						</div>
 						</div>

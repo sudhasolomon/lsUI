@@ -1,27 +1,13 @@
-<div ng-controller="sidebarController">
-<ul>
-<li>
-      <a href="#/dashboard">
-        <i class="icon-check"></i> Dash Board</span>
-        </a>
- </li>
+<div class="sidebar">
+
  
- <li>
-      <a href="#/dailyView">
-        <i class="fa fa-users" aria-hidden="true"></i> My Daily View</span>
-        </a>
- </li> 
- 
-<li>
-      <a href="#/add/0">
-        <i class="fa fa-users" aria-hidden="true"></i> Add Customer</span>
-        </a>
- </li> 
- 
-<li>
-      <a href="#/view">
-        <i class="fa fa-users" aria-hidden="true"></i> view Customer</span>
-        </a>
- </li>  
- </ul>
+ <a href="#/dashboard" class="smoothScroll ">Dash Board </a>
+			<a href="#/dailyView" class="smoothScroll ">Daily View </a>
+			<a href="#/add/0" class="smoothScroll">Add Customer</a>
+			<a href="#/view" class="smoothScroll">view Customer</a>
+			<a href="#/accounts" class="smoothScroll">Accounts</a>
+			<h1 class="logo"><a href="#">Settings</a></h1>
+			<a href="#/profile" class="smoothScroll">Profile</a>
+			<a href="#/changepassword" class="smoothScroll">Change password</a>
+			<a href="#" class="smoothScroll" ng-click="logout()">Logout</a>
 </div>

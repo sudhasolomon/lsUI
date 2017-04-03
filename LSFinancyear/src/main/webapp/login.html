@@ -9,10 +9,11 @@
 <script type="text/javascript" src="js/loginmodule/login.js"></script>
 <script type="text/javascript" src="js/angular/ui-bootstrap-tpls.min.js"></script>
 
-<link type="text/css" href="css/bootstrap.css" rel="stylesheet">
-<link type="text/css" href="css/bootstrap-theme.css" rel="stylesheet">
+<link type="text/css" href="css/font-awesome/css/bootstrap.css" rel="stylesheet">
+<!-- <link type="text/css" href="css/bootstrap-theme.css" rel="stylesheet"> -->
 <link href="css/font-awesome/css/font-awesome.css" rel="stylesheet">
-<link href="css/styles.css" rel="stylesheet">
+<!-- <link href="css/styles.css" rel="stylesheet"> -->
+<link href="css/main.css" rel="stylesheet">
 <link href="css/loginform-style.css" rel="stylesheet">
 
 </head>
@@ -23,7 +24,6 @@
 
 </header> -->
 <body>
-	<div class="container" style="width: 100%">
 		<div class="row">
 	<!-- 		<div class="col-md-6">
 				<div id="slides_control" style="width: 100%">
@@ -38,9 +38,9 @@
 					</div>
 				</div>
 			</div> -->
-			<div class="col-xs-12 loginbg" >
 
 				<!--  <div class="form-body"> -->
+				 <div class="row">
 				<div ng-if="login" style=" margin-top: 30px;margin-bottom: 50px;">
 					<form name="login-form" class="login-form">
 
@@ -49,18 +49,26 @@
 						</div>
 
 						<div class="content">
+						<div class="row">
 						<div class="form-group">
-							<input  ng-model="log.userId" type="text" class="input password"
+							<input  ng-model="log.userId" type="text" class="form-control"
 								placeholder="Username" />
 							<div class="user-icon"></div>
-							<input ng-model="log.pass" type="password" class="input password"
+							<br>
+							
+							<div class="row">
+						<div class="form-group">
+							<input ng-model="log.pass" type="password" class="form-control"
 								placeholder="Password" />
 							<div class="pass-icon"></div>
 						</div>
 						</div>
+						</div></div>
+						
+						</div>
 						<div class="footer">
-						<div class="row" >
-							<button ng-click="getLogin(log)" class="button">Login</button>
+						<div class="row" style="text-align: center;">
+							<button ng-click="getLogin(log)" class="tags">Login</button>
 							</div>
 							<br>
 							<div class="row" style="text-align: center;">
@@ -74,85 +82,94 @@
 
 					</form>
 				</div>
-				<div ng-if="regist" >
+				</div>
+				
+				<div ng-if="regist"  style=" margin-top: 30px;margin-bottom: 50px;">
 					<form novalidate="" ng-submit=""  name="login-form-reg" class="login-form-reg"> 
-					<div class="row">
-			<div class="col-md-12">
+					 <div class="row">
 					<div class="header">
 							<h1>Register for LS Finance</h1>
 							<!-- <span>Please, fill this form</span> -->
 						</div>
 				 
 					<div class="content">
-					<div class="form-group">
+					
 					 <div class="row">
 					 <div class="col-md-6">
-						 <input  ng-model="user.firstName" type="text" class="input password"
+					 <div class="form-group">
+						 <input  ng-model="user.firstName" type="text" class="form-control"
 								placeholder="Firstname" required="" />
+						</div>		
 					</div>
 					<div class="col-md-6"> 
-						 <input  ng-model="user.lastName" type="text" class="input password"
+					<div class="form-group">
+						 <input  ng-model="user.lastName" type="text" class="form-control"
 								placeholder="Lastname" required="" />
-					</div>
+					</div></div>
 					</div> 
 						<div class="row">
 					 <div class="col-md-6">
-						<input  ng-model="user.userName" type="text" class="input password"
+					 <div class="form-group">
+						<input  ng-model="user.userName" type="text" class="form-control"
 								placeholder="Username" required="" />
-					</div>
+					</div></div>
 					 <div class="col-md-6">
-						<input  ng-model="user.address" type="text" class="input password"
+					 <div class="form-group">
+						<input  ng-model="user.address" type="text" class="form-control"
 								placeholder="Address" required="" />
-					</div>
-					</div>
+					</div></div>	 
+					 </div>
 					<div class="row">
 					 <div class="col-md-6">
-						<input  ng-model="user.email" type="email" class="input password"
+					 <div class="form-group">
+						<input  ng-model="user.email" type="email" class="form-control"
 								placeholder="Email" required="" />
-					</div>
+					</div></div>
 					 <div class="col-md-6">
-						<input  ng-model="user.phoneNumber" type="text" class="input password"
+					  <div class="form-group">
+						<input  ng-model="user.phoneNumber" type="text" class="form-control"
 								placeholder="Phone Number" required="" />
 					</div>
 					</div>
+					</div>
 					<div class="row">
 					 <div class="col-md-6">
-						<input  ng-model="user.password" type="password" class="input password"
+					 <div class="form-group">
+						<input  ng-model="user.password" type="password" class="form-control"
 								placeholder="Password" required="" />
-						</div>
+						</div></div>
 					 <div class="col-md-6">
-						<input  ng-model="user.confirmPassword" type="password" class="input password"
+					 <div class="form-group">
+						<input  ng-model="user.confirmPassword" type="password" class="form-control"
 								placeholder="Confirm Password" required="" />
 						</div>		
 						</div>
-						</div>	 
+						</div>
+						
 						<div class="footer">
-						<div class="row">
-						<div class="col-md-6">
-							<button ng-click="registerUser(user)" class="button">Register</button></div>
-							<div class="col-md-6" style="text-align: center; padding-top: 20px;">
+						<div class="row" style="text-align: center;">
+						
+							<button ng-click="registerUser(user)" class="tags">Register</button>
+							</div><br>
+							<div class="row" style="text-align: center;">
 							<a href="" ng-click="logInPage()">Click Here To Login</a></div>
-							</div>
+							
 							<div class="row">
 							<div ng-if="successFlag">
 								<div style="color: green; text-align: center;">{{successMessage}}</div>
 							</div>
 							<div ng-if="rejectFlag" style="color: red; text-align: center;">{{rejectMessage}}</div>
 							</div>
-							
-						</div>
-					 </div>
+							</div>
 						</div>
 						</div>
 					</form>
 				</div>
+</div>
 
 
-			</div>
 
-
-		</div>
-	</div>
+		
 	<!-- </div> -->
 </body>
 </html>
