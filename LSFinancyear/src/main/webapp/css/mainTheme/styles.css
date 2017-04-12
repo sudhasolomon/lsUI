@@ -2,7 +2,7 @@ body
 {
 	margin:0;
 	padding:0;
-	background-color:#2d2c41;
+	/* background-color:#2d2c41; */
 }
 .form-input
 {
@@ -112,10 +112,22 @@ header {
 
 .even{
  /* background-color: #aedeec; */
- border: 1px inset currentColor;
+/* outline: thin solid #669934; */
+border-top: thin solid;
+border-top-color: #2d2c41;
+border-bottom: thin solid;
+border-bottom-color: #2d2c41;
+border-left: thin solid;
+	border-right : thin solid;
+	border-left-color: #2d2c41;
+	border-right-color: #2d2c41;
 }
 .odd{
-	border: 1px inset currentColor;
+	
+	border-left: thin solid;
+	border-right : thin solid;
+	border-left-color: #2d2c41;
+	border-right-color: #2d2c41;
  /* background-color: #e0f3f8; */
 }
 

@@ -23,6 +23,7 @@
 		$scope.daysToPay = "Select Finance Type";
 		
 		$scope.onload = function(){
+			
 			$scope.customerPageType = "Add Customer";
 			
 			if($stateParams.customerId > 0 ){

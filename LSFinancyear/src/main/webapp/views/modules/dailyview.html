@@ -71,7 +71,7 @@
     ng-click="displayItemInfo(customer)" style="cursor: pointer;"
     ng-class-odd="'odd'" ng-class-even="'even'">
     <div class="col-md-2">
-     <label class="lable16"><a href="#" ng-click="customer.isCollapsed = !customer.isCollapsed" title="Make Payment">{{customer.customerId}}</a></label>
+     <label class="lable16"><a class="tableLinkFields" href="#" ng-click="customer.isCollapsed = !customer.isCollapsed" title="Make Payment">{{customer.customerId}}</a></label>
     </div>
     <div class="col-md-2" >
      <label class="lable16">{{customer.name}}</label>
@@ -159,7 +159,7 @@
     <div class="col-xs-12">
     <div class="row col-xs-12 topbtmspace" >
      <div class="col-xs-6 "><label  >Customer ID</label></div>
-     <div class="col-xs-6 "><label style="cursor: pointer; color: #fff7b2" ng-click="customer.isCollapsed = !customer.isCollapsed" title="Make Payment">{{customer.customerId}}</label></div>
+     <div class="col-xs-6 "><label class="tableLinkFieldslable" ng-click="customer.isCollapsed = !customer.isCollapsed" title="Make Payment">{{customer.customerId}}</label></div>
     </div>
     <div class="row col-xs-12 topbtmspace">
      <div class="col-xs-6 "><label >Name</label></div>

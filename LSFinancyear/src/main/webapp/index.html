@@ -1,21 +1,22 @@
-<html ng-app="financyearApp" ng-controller = "financyearController">
+<html ng-app="financyearApp" ng-controller = "financyearController" ng-init="onload()">
 <head>
 <title>LS-Financyear</title>
+<!-- <link type="text/css" href="css/bootstrap-theme.css" rel="stylesheet"> -->
+<!-- <link type="text/css" href="css/components.css" rel="stylesheet"> -->
+<!-- <link type="text/css" href="css/bootstrap.css" rel="stylesheet"> -->
+<!-- <link type="text/css" href="css/custom.min.css" rel="stylesheet"> -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="css/font-awesome/css/font-awesome.css" rel="stylesheet">
 <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="css/font-awesome/css/bootstrap.css" rel="stylesheet">
-<link type="text/css" href="css/styles.css" rel="stylesheet">
-<!-- <link type="text/css" href="css/bootstrap.css" rel="stylesheet"> -->
-
 <link type="text/css" href="css/darkblue.css" rel="stylesheet">
-<!-- <link type="text/css" href="css/bootstrap-theme.css" rel="stylesheet"> -->
-<!-- <link type="text/css" href="css/components.css" rel="stylesheet"> -->
+
 <link type="text/css" href="css/layout.css" rel="stylesheet">
-<!-- <link type="text/css" href="css/custom.min.css" rel="stylesheet"> -->
-<!-- css for toggle -->
- <link type="text/css" href="css/main.css" rel="stylesheet">
- <link href="css/loginform-style.css" rel="stylesheet">
+<!-- <link href="css/greenTheme/styles.css" rel="stylesheet"> -->
+ <link  data-ng-href="{{main}}" rel="stylesheet">
+ <link data-ng-href="{{loginform}}" rel="stylesheet">
+ <link data-ng-href="{{bootstrap}}" rel="stylesheet">
+<link  data-ng-href="{{styles}}" rel="stylesheet">
+
  
 
 
@@ -45,17 +46,59 @@
  <div data-ng-include="'views/temp/sidebar.html'" data-ng-controller="sidebarController" class="page-sidebar-wrapper" style="position: fixed;"> </div>
 <nav class="menu" id="theMenu">	
 		<div class="menu-wrap">
-			<img id="Image"/>
-			<h1 class="logo"><a href="#">{{loginUser.firstName}} {{loginUser.lastName}}</a></h1>
-			<i class="icon-remove menu-close"></i>
-			<a href="#/dashboard" class="smoothScroll ">Dash Board </a>
-			<a href="#/dailyView" class="smoothScroll ">Daily View </a>
-			<a href="#/add/0" class="smoothScroll">Add Customer</a>
-			<a href="#/view" class="smoothScroll">view Customer</a>
-			<a href="#/accounts" class="smoothScroll">Accounts</a>
+			<!-- <img id="Image"/> -->
+			
+			
+			<!-- <h1 class="logo"><a href="#">{{loginUser.firstName}} {{loginUser.lastName}}</a></h1> -->
+			<div class="profileMenu1" >
+  			<div class="btn-group" dropdown>
+            <button type="button"
+                    class="btn  dropdown-toggle"
+                    dropdown-toggle>
+                {{loginUser.userName}} <span class="caret"></span>
+            </button>
+            
+            <ul class="dropdown-menu" role="menu">
+            
+             <li>
+                    <a href="">Themes</a>
+                </li>
+                 <li class="divider"></li>
+                <li>
+                    <a href="" ng-click="mainTheme()">Main Theme</a>
+                </li>
+                <li>
+                    <a href="" ng-click="greenTheme()">Green Theme</a>
+                </li>  
+                 <li>
+                    <a href="" ng-click="lgreenTheme()">Lgreen Theme</a>
+                </li>  
+                <li>
+                
+                    <a href="" ng-click="redTheme()">Red Theme</a>
+                </li>
+                 <li>
+                    <a href="" ng-click="blueTheme()">Blue Theme</a>
+                </li> 
+                <li>
+                    <a href="#">LOG OUT</a>
+                </li>
+               
+                
+            </ul>
+        </div>
+</div>
+
+<br><br>
+			<!-- <i class="icon-remove menu-close"></i> -->
+			<a href="#/dashboard" class="menu-close ">Dash Board </a>
+			<a href="#/dailyView" class="menu-close ">Daily View </a>
+			<a href="#/add/0" class="menu-close">Add Customer</a>
+			<a href="#/view" class="menu-close">view Customer</a>
+			<a href="#/accounts" class="menu-close">Accounts</a>
 			<h1 class="logo"><a href="#">Settings</a></h1>
-			<a href="#/profile" class="smoothScroll">Profile</a>
-			<a href="#/changepassword" class="smoothScroll">Change password</a>
+			<a href="#/profile" class="menu-close">Profile</a>
+			<a href="#/changepassword" class="menu-close">Change password</a>
 			<a href="#" class="smoothScroll" ng-click="logout()">Logout</a>
 			<!-- <a href="#"><i class="icon-facebook"></i></a>
 			<a href="#"><i class="icon-twitter"></i></a>

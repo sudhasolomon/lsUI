@@ -1,0 +1,291 @@
+body
+{
+	margin:0;
+	padding:0;
+	/* background-color:#2d2c41; */
+}
+.form-input
+{
+	margin:0px;
+	padding:5px;
+	border:1px solid #9c9c9c;
+	display: block;
+	width: 200px;
+}
+.form-btn
+{
+	border-radius:100px;
+	height:50px;
+	width: 50px;
+	position: relative;;
+	top:-70px;
+	left:210px;
+	border:0px solid #000000;
+	background-color:#4b4baa;
+	color:#ffffff;
+}
+.form-btn i
+{
+	margin:0;
+	font-size: 40px;
+	
+}
+.login-section
+{
+	margin:auto;
+	padding:30px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height:75px;
+	width:250px;
+	border:1px solid #4b4baa;
+	border-radius:25px;
+}
+
+
+header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color:#044E7F;
+    /* height: 60px;   #2d3238*/
+}
+/* footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000;
+    height: 30px;
+} */
+
+
+.myheader
+{
+	margin:0;
+	padding:10px;
+	/* background-color:#000000; */
+	font-size:24px;
+	color:#000000;
+	font-weight:bold;
+	height: 50px;
+	
+}
+/* filter: alpha(opacity=80);
+	opacity: 0.1; */
+.myfooter
+{
+	
+	margin:0;
+	padding:10px;
+	background-color:#00ffff;
+	filter: alpha(opacity=80);
+	opacity: 0.1;
+	font-size:24px;
+	color:#000000;
+	font-weight:bold;
+	text-align:center;
+}
+
+.mysidebar
+{
+	margin:0;
+	padding:0;
+	float:left;
+	background-color:#cccccc;
+	min-height:630px;
+}
+.mycontent
+{
+	margin:0;
+	padding:0;
+	float:left;
+}
+.cleamboth
+{
+	clear:both;
+}
+
+.even{
+ /* background-color: #aedeec; */
+/* outline: thin solid #669934; */
+border-top: thin solid;
+border-top-color: #044E7F;
+border-bottom: thin solid;
+border-bottom-color: #044E7F;
+border-left: thin solid;
+	border-right : thin solid;
+	border-left-color: #044E7F;
+	border-right-color: #044E7F;
+}
+.odd{
+	
+	border-left: thin solid;
+	border-right : thin solid;
+	border-left-color: #044E7F;
+	border-right-color: #044E7F;
+ /* background-color: #e0f3f8; */
+}
+
+.even1{
+ background-color: #078be2;
+/*  border: 1px inset currentColor; */
+}
+.odd1{
+	/* border: 1px inset currentColor; */
+ background-color: #bde3fd;
+}
+
+
+ @media only screen and (max-width:700px)
+{
+ .show2{ display: block; padding: 5px 15px; margin-top: 2px;  column-count:1; -webkit-column-count: 1; -moz-column-count: 1;}
+ .col-md-6{ width: 100%;}
+ .li1{width: 80%;}
+ .magicdiv{	height:80px!important;}
+ .login-form-reg, .login-form-reg .content .input {	width:100%!important;}
+ .custom-form, .custom-form .content .input {	width:100%!important;}
+ 
+}
+ .show1{}
+ .show2{display: none;}
+ .float_l{float: left;}
+ 
+ @media only screen and (max-width: 1000px) {
+   
+  .show1{display: none;}
+  .show2{ display: block; padding: 5px 15px; margin-top: 2px;  column-count:1; -webkit-column-count: 1; -moz-column-count: 1;}
+  .clear{ clear: both;}
+  .login-form-reg, .login-form-reg .content .input {	width:100%!important;}
+  .custom-form, .custom-form .content .input {	width:100%!important;}
+  
+  
+}
+
+
+#slides_control > div{
+	   margin-top: 100px;
+}
+img{
+  margin:auto;
+  width: 400px;
+}
+#slides_control {
+/*   position:absolute; */
+/*   width: 400px; */
+ /*  left:50%; */
+  top:20px;
+/*  margin-left:-200px; */
+}
+
+.loginbg{
+/* 	background-color:#56c2e1; */
+	 opacity: 0.8;
+}
+
+/* //#56c2e1  #83AFBB*/
+#menuToggle
+{
+	height:auto!important;
+	width:auto!important;
+	padding:12px;
+}
+#menuToggle i
+{
+	font-size:25px;
+}
+header
+{
+	z-index:1!important;
+}
+
+.clearboth
+{
+	clear:both;
+}
+.topbtmspace
+{
+	padding:4px;
+}
+.magicdiv
+{
+	height:0px;
+}
+.login-form-reg .header
+{
+	padding:0!important;
+	margin:0;
+	text-align:center;
+}
+.label_bold_18{
+	/* color: #e1e68a; */
+	/* font-size: 14px;
+	font-family: serif; */
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+.label_bold_15{
+	 
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.lable16{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+.filterbox{
+	margin-bottom: 5px;
+}
+
+.onExpand{
+	margin-bottom: 40px;
+    margin-top: 0;
+}
+.radiobutton{
+	padding:1px 20px 5px 40px;
+}
+
+#Image {
+    background: url('../img/lenin.jpg');
+    border-radius: 150px;
+    width: 150px;
+    height: 150px;
+    background-size: 210px;
+    background-position: right;
+    margin: 10px 23px 23px;
+}
+
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  padding: 20px;
+}
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+  background: #eee; 
+}
+th { 
+  background: #333; 
+  color: white; 
+  font-weight: bold; 
+}
+td, th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
+}
+.newCustAnchor{
+	margin-top: 20px;
+	margin-left: 50px;
+}
