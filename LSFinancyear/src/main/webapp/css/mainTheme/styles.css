@@ -113,8 +113,6 @@ header {
 .even{
  /* background-color: #aedeec; */
 /* outline: thin solid #669934; */
-border-top: thin solid;
-border-top-color: #2d2c41;
 border-bottom: thin solid;
 border-bottom-color: #2d2c41;
 border-left: thin solid;
@@ -123,7 +121,8 @@ border-left: thin solid;
 	border-right-color: #2d2c41;
 }
 .odd{
-	
+	border-bottom: thin solid;
+border-bottom-color: #2d2c41;
 	border-left: thin solid;
 	border-right : thin solid;
 	border-left-color: #2d2c41;

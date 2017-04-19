@@ -181,7 +181,24 @@
 		}
 		
 		$scope.$on('$stateChangeStart', function (event, next, current) {
-			
+			/* $http({
+		            method: 'GET',
+		            url: '/LSFinanceService/login/getLoggedInPersonInfo'
+		        })  
+		        .success(function(data, status){
+		        	if(data){
+		        	$rootScope.loginUser = data;
+		        	
+		        	}else{
+		        		location.href = 'login.html';
+		        	}
+		        	
+		        
+		        })
+		        .error(function(data, status){
+		        	location.href = 'login.html';
+		        })*/
+		 
 			
 		});
 		

@@ -4,7 +4,7 @@
 	"use strict";
 	 
 			angular.module('customerModule',['addCustomerModule', 'viewCustomerModule', 'dailyViewModule', 'customerAccountsModule', 'dashboardModule'
-			                                 , 'dateRangeModule', 'accountsModule'])
+			                                 , 'dateRangeModule', 'accountsModule','postponedmodule'])
 			
 			
 			.config(['$stateProvider', '$urlRouterProvider',  function($stateProvider, $urlRouterProvider) {
@@ -61,6 +61,11 @@
                     
                     controller: "accountsController",
                 }) 
-                
+                .state('postponedmodule', {
+                    url: "/postponed",
+                    templateUrl: "views/modules/postponedcustomers.html",            
+                    
+                    controller: "postponedcontroller",
+                }) 
 			}]);
 })(angular);

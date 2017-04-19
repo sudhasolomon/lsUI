@@ -29,6 +29,11 @@
 						$scope.postDatePopup = {
 							opened : false
 						};
+						
+				$scope.onload = function(){
+					$scope.type = "Daily";
+					$scope.getMyDailyView();
+				}
 				 
 				$scope.getMyDailyView = function(){
 					$scope.type;
